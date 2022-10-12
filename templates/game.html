@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game - Quiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+    {% include "nav.html" %}
+    <div style="width: 100vw; height: 70vh; display: flex; align-items: center; justify-items: center;">
+        <form class="card" style="max-width: 30rem; margin: auto;" method="post" action="/game">
+            <div class="card-body">
+              <h5 class="card-title">Quiz Question</h5>
+              <p class="card-text">The following options will give you respective points</p>
+              <p class="card-text" style="color: #999999;">Current Score: {{user.score}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><input class="mx-1" type="radio" name="answer" id="a" value="a"><label style="width: calc(100% - 1.4rem)" for="a">1 Point</label></li>
+              <li class="list-group-item"><input class="mx-1" type="radio" name="answer" id="b" value="b"><label style="width: calc(100% - 1.4rem)" for="b">2 Point</label></li>
+              <li class="list-group-item"><input class="mx-1" type="radio" name="answer" id="c" value="c"><label style="width: calc(100% - 1.4rem)" for="c">5 Point</label></li>
+              <li class="list-group-item"><input class="mx-1" type="radio" name="answer" id="d" value="d"><label style="width: calc(100% - 1.4rem)" for="d">10 Point</label></li>
+            </ul>
+            <div class="card-body">
+                <button type="submit" class="w-100 btn btn-lg btn-primary">Submit</button>
+              </div>
+          </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>
